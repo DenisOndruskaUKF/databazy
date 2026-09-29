@@ -22,3 +22,48 @@ CREATE TABLE flourmills_sales (
     production_date  DATE,
     total_amount     DECIMAL(12,2)
 );
+
+--ULOHA 1 (4028)
+SELECT 
+    product_name, 
+    total_amount
+ from flourmills_sales 
+ WHERE total_amount > (SELECT avg(total_amount) from flourmills_sales);
+
+--ULOHA 2 (a)
+ SELECT 
+    sales_id, 
+    sale_date, 
+    region, 
+    product_category
+from flourmills_sales 
+WHERE product_category = (
+    SELECT 
+    product_category 
+    FROM flourmills_sales
+    GROUP BY product_category
+    ORDER BY SUM(total_amount)
+    DESC LIMIT 1) 
+    ORDER BY sales_id ASC;
+
+
+--ULOHA 3 (Golden Penny Flour 50kg)
+SELECT 
+    product_name,
+    total_amount, 
+    (SELECT AVG(total_amount) FROM flourmills_sales) AS avg_amount
+FROM flourmills_sales;
+
+--ULOHA 4 (a)
+SELECT 
+    product_name, 
+    total_amount,
+    total_amount / (SELECT SUM(total_amount) FROM flourmills_sales) AS amount_share
+from flourmills_sales;
+
+--Uloha 5 ()
+
+SELECT 
+    EXTRACT(MONTH FROM sale_date) as month,
+    (SELECT SUM(total_amount) FROM flourmills_sales GROUP BY EXTRACT(MONTH FROM sale_date))
+FROM flourmills_sales;
