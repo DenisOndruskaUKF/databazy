@@ -1,0 +1,12 @@
+validation_rule,invalid_rows,severity
+invalid_order_id,0,critical
+duplicate_order_id,22,critical
+invalid_region,0,critical
+invalid_product,31,critical
+invalid_quantity,29,critical
+invalid_sales_amount,22,critical
+invalid_discount,29,critical
+invalid_order_date,3,critical
+invalid_delivery_date,10,critical
+delivery_before_order,18,critical
+invalid_phone,34,warning
