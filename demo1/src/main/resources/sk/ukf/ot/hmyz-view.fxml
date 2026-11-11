@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane prefHeight="520.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.ukf.ot.HmyzController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button onAction="#pridajMuchu" text="Pridaj muchu" />
+            <Button onAction="#pridajChrobaka" text="Pridaj chrobáka" />
+            <Label text="W – všetok hmyz o 50 px hore, S – zastaviť muchy" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <Pane fx:id="plocha" style="-fx-background-color: #eeeeee;" BorderPane.alignment="CENTER">
+         <clip>
+            <Rectangle height="${plocha.height}" width="${plocha.width}" />
+         </clip>
+      </Pane>
+   </center>
+</BorderPane>

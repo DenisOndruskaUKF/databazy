@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.ukf.banka.BankaController">
+   <top>
+      <VBox spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Počiatočný zostatok:" />
+                  <TextField fx:id="pociatocnyZostatok" prefWidth="120.0" />
+                  <Button onAction="#createAccount" text="Vytvoriť účet" />
+                  <Label text="Zostatok:" />
+                  <Label fx:id="zostatokLabel" style="-fx-font-weight: bold;" text="0,00 €" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Typ:" />
+                  <ComboBox fx:id="typ" prefWidth="100.0" />
+                  <Label text="Suma:" />
+                  <TextField fx:id="suma" prefWidth="80.0" />
+                  <Button fx:id="runOneButton" onAction="#runOne" text="Spustiť klienta" />
+                  <Button fx:id="runFiveButton" onAction="#runFive" text="Spustiť 5 klientov" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <VBox spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Transakcie:" />
+            <TextArea fx:id="transakcie" editable="false" VBox.vgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

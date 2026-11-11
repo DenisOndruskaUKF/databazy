@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="420.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.ukf.ulohy.UlohyController">
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <left>
+      <ListView fx:id="listView" prefWidth="340.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <TextField fx:id="nazov" promptText="Názov úlohy" />
+            <ComboBox fx:id="priorita" maxWidth="1.7976931348623157E308" />
+            <ComboBox fx:id="stav" maxWidth="1.7976931348623157E308" />
+            <Button fx:id="pridajButton" maxWidth="1.7976931348623157E308" onAction="#pridaj" text="Pridaj" />
+            <Button fx:id="zmazButton" maxWidth="1.7976931348623157E308" onAction="#zmaz" text="Zmaž" />
+            <Button fx:id="spustiButton" maxWidth="1.7976931348623157E308" onAction="#spustiVlakna" text="Spusti vlákna" />
+         </children>
+         <padding>
+            <Insets left="15.0" right="15.0" />
+         </padding>
+      </VBox>
+   </center>
+   <right>
+      <TextArea fx:id="vypis" editable="false" prefWidth="230.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
