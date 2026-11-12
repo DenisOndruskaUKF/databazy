@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane prefHeight="520.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.ukf.robot.RobotController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="typRobota" prefWidth="150.0" />
+            <Button fx:id="pridajButton" onAction="#pridaj" text="Pridaj" />
+            <Button fx:id="pohybButton" onAction="#prepniPohyb" text="Zastav všetkých" />
+            <Button fx:id="obratButton" onAction="#obratSmer" text="Obrátiť smer vybraného typu" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <Pane fx:id="plocha" style="-fx-background-color: #eeeeee;" BorderPane.alignment="CENTER">
+         <clip>
+            <Rectangle height="${plocha.height}" width="${plocha.width}" />
+         </clip>
+      </Pane>
+   </center>
+</BorderPane>
